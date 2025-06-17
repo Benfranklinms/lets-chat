@@ -36,10 +36,31 @@ const Chat = () => {
       setmessages([...messages, message]);
     });
   }, [messages])
+
+
+  const sendMessage = (e) => {
+    e.preventDefault();
+    if(message) {
+      socket.emit('sendMessage', message, () => {
+        setmessage("");
+      });
+    }
+  }
+
+  console.log(message, messages);
   
   
   return (
-   <h1>Chat</h1>
+    <div>
+      <div>
+        <input type="text"
+          value={message}
+          onChange={(e) => setmessage(e.target.value)}
+          onKeyPress={(e) => e.key === 'Enter' ? sendMessage(e) : null}
+        />
+      </div>
+      hello
+    </div>
   )
 }
 
