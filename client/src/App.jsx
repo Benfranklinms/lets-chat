@@ -1,7 +1,7 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Join from './components/join.jsx'
-import Chat from './components/chat.jsx'
+import Chat from './components/Chat/Chat.jsx'
 
 const App = () => {
   return (
