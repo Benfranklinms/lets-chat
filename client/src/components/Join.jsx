@@ -1,9 +1,12 @@
 import React from 'react'
-import 
+import { useState } from 'react'
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Join = () => {
+  const [name, setname] = useState("");
+  const [room, setroom] = useState("");
   return (
-    <h1>Join</h1>
+    <div></div>
   )
 }
 
