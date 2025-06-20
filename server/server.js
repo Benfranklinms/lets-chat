@@ -49,7 +49,6 @@ io.on('connection', (socket) => {
         callback();
     });
 
-
     socket.on("disconnect", () => {
         console.log("disconnected");
     });
