@@ -56,11 +56,15 @@ const Chat = () => {
   
   
   return (
-    <div>
-      <div>
-        <Infobar room = {room} />
-        <Messages messages = { messages } name = { name }/>
-        <Input message = { message } setmessage = { setmessage } sendMessage = { sendMessage } />
+    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+      <div className="w-full max-w-2xl bg-white rounded-lg shadow-lg flex flex-col" style={{ minHeight: '80vh', height: '80vh' }}>
+        <Infobar room={room} />
+        <div className="flex-1 overflow-y-auto p-4">
+          <Messages messages={messages} name={name} />
+        </div>
+        <div className="p-4 border-t">
+          <Input message={message} setmessage={setmessage} sendMessage={sendMessage} />
+        </div>
       </div>
     </div>
   )
