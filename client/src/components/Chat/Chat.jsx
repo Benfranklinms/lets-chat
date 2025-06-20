@@ -62,7 +62,7 @@ const Chat = () => {
         <div className="flex-1 overflow-y-auto p-4">
           <Messages messages={messages} name={name} />
         </div>
-        <div className="p-4 border-t">
+        <div className="p-4 border-t-2 border-gray-200">
           <Input message={message} setmessage={setmessage} sendMessage={sendMessage} />
         </div>
       </div>
