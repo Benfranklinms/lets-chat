@@ -5,6 +5,7 @@ import { useLocation } from 'react-router-dom';
 import { io } from "socket.io-client";
 import Infobar from '../Infobar/Infobar';
 import Input from '../Input/Input';
+import Messages from '../Messages/Messages';
 
 
 let socket;
@@ -58,6 +59,7 @@ const Chat = () => {
     <div>
       <div>
         <Infobar room = {room} />
+        <Messages messages = { messages } name = { name }/>
         <Input message = { message } setmessage = { setmessage } sendMessage = { sendMessage } />
       </div>
     </div>
