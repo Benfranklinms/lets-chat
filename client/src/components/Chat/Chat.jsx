@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import queryString from 'query-string'
 import { useLocation } from 'react-router-dom';
 import { io } from "socket.io-client";
+import Infobar from '../Infobar/Infobar';
 
 
 let socket;
@@ -53,7 +54,7 @@ const Chat = () => {
   return (
     <div>
       <div>
-        
+        <Infobar room = {room} />
         {/* <input type="text"
           value={message}
           onChange={(e) => setmessage(e.target.value)}
