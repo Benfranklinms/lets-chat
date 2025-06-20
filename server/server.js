@@ -48,6 +48,10 @@ io.on('connection', (socket) => {
         const user = getUser(socket.id);
         if (user) {
             io.to(user.room).emit("message", { user: user.name, text: message });
+            io.to(user.room).emit("roomdata", {
+                room: user.room,
+                text: message
+            });
         }
 
         callback();

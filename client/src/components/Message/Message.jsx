@@ -1,4 +1,6 @@
 import React from 'react'
+import ReactEmoji from 'react-emoji';
+
 
 const Message = ({ message: { text, user}, name }) => {
     let isSendByCurrentUser = false;
@@ -15,7 +17,7 @@ return (
             <div className="flex flex-col items-end">
                 <p className="text-xs text-gray-500 mb-1">{trimmedName}</p>
                 <div className="bg-blue-500 text-white px-4 py-2 rounded-lg max-w-xs break-words">
-                    <p>{text}</p>
+                    <p>{ReactEmoji.emojify(text)}</p>
                 </div>
             </div>
         </div>
