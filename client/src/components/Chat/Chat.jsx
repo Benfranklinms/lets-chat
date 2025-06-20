@@ -53,11 +53,12 @@ const Chat = () => {
   return (
     <div>
       <div>
-        <input type="text"
+        
+        {/* <input type="text"
           value={message}
           onChange={(e) => setmessage(e.target.value)}
           onKeyPress={(e) => e.key === 'Enter' ? sendMessage(e) : null}
-        />
+        /> */}
       </div>
       hello
     </div>
