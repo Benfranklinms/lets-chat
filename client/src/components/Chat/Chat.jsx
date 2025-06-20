@@ -4,6 +4,7 @@ import queryString from 'query-string'
 import { useLocation } from 'react-router-dom';
 import { io } from "socket.io-client";
 import Infobar from '../Infobar/Infobar';
+import Input from '../Input/Input';
 
 
 let socket;
@@ -22,8 +23,10 @@ const Chat = () => {
 
     setname(name);
     setroom(room);
-    socket.emit('join', { name, room }, () => {
-
+    socket.emit('join', { name, room }, (error) => {
+       if(error) {
+        alert(error);
+      }
     });
 
     return () => {
@@ -55,13 +58,8 @@ const Chat = () => {
     <div>
       <div>
         <Infobar room = {room} />
-        {/* <input type="text"
-          value={message}
-          onChange={(e) => setmessage(e.target.value)}
-          onKeyPress={(e) => e.key === 'Enter' ? sendMessage(e) : null}
-        /> */}
+        <Input message = { message } setmessage = { setmessage } sendMessage = { sendMessage } />
       </div>
-      hello
     </div>
   )
 }

@@ -1,6 +1,5 @@
 import express from 'express';
 import { Server } from "socket.io";
-import http from 'http';
 import { createServer } from 'http';
 import cors from 'cors';
 import router from './routes/router.js';
@@ -43,7 +42,9 @@ io.on('connection', (socket) => {
 
     socket.on("sendMessage", (message, callback) => {
         const user = getUser(socket.id);
-        io.to(user.room).emit("message", { user: user.name, text: message });
+        if (user) {
+            io.to(user.room).emit("message", { user: user.name, text: message });
+        }
 
         callback();
     });
